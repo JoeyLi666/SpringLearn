@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!-- 容器通过无参构造函数创建Beans   -->
+    <!--    <bean id="userDao" class="com.itheima.dao.impl.UserDaoImpl"></bean>-->
+    <!--    <bean id="produceDao" class="com.itheima.dao.impl.ProduceDaoImpl"></bean>-->
+
+    <!-- 容器通過靜態工廠類創建Beans    -->
+    <!--<bean id="userDao" class="com.itheima.factory.StaticFactory" factory-method="getUserDao"></bean>-->
+    <!--    <bean id="produceDao" class="com.itheima.factory.StaticFactory" factory-method="getProduceDao"></bean>-->
+
+    <!-- 容器通過非靜態工廠類創建Beans    -->
+    <!--    首先需先創建工廠類的Beans-->
+    <!--    <bean id="factory" class="com.itheima.factory.DynamicFactory"></bean>-->
+    <!--    &lt;!&ndash;    容器通過工廠類的實例bean的方法創建bean&ndash;&gt;-->
+    <!--    <bean id="userDao" factory-bean="factory" factory-method="getUserDao"/>-->
+    <!--    <bean id="produceDao" factory-bean="factory" factory-method="getProduceDao"/>-->
+    <!--    <bean id="produceService" class="com.itheima.service.impl.ProduceServiceImpl"/>-->
+
+    <!--    Bean的依賴注入-->
+    <!--    調用set方法進行注入-->
+    <bean id="produceDao" class="com.itheima.dao.impl.ProduceDaoImpl"></bean>
+    <bean id="produceDaos" class="com.itheima.dao.impl.ProduceDaoImpl"></bean>
+    <!--    <bean id="produceService" class="com.itheima.service.impl.ProduceServiceImpl">-->
+    <!--        <property name="produceDao" ref="produceDao"/>-->
+    <!--    </bean>-->
+
+    <!--    &lt;!&ndash;    P命名空間注入&ndash;&gt;-->
+    <!--    <bean id="produceService" class="com.itheima.service.impl.ProduceServiceImpl" p:produceDao-ref="produceDao"/>-->
+
+    <!--    構造器注入-->
+    <bean id="produceService" class="com.itheima.service.impl.ProduceServiceImpl">
+        <constructor-arg name="produceDao" ref="produceDao"></constructor-arg>
+    </bean>
+
+    <!--<bean id="userDao" class="com.itheima.dao.impl.UserDaoImpl">
+        <property name="username" value="zhangsan"/>
+        <property name="age" value="18"/>
+    </bean>-->
+    <!--    <bean id="userDao" class="com.itheima.dao.impl.UserDaoImpl">-->
+    <!--        <property name="strList">-->
+    <!--            <list>-->
+    <!--                <value>aaa</value>-->
+    <!--                <value>bbb</value>-->
+    <!--                <value>ccc</value>-->
+    <!--            </list>-->
+    <!--        </property>-->
+    <!--        <property name="userMap">-->
+    <!--            <map>-->
+    <!--                <entry key="u1" value-ref="user1"></entry>-->
+    <!--                <entry key="u2" value-ref="user2"></entry>-->
+    <!--            </map>-->
+    <!--        </property>-->
+    <!--        <property name="properties">-->
+    <!--            <props>-->
+    <!--                <prop key="p1">ppp1</prop>-->
+    <!--                <prop key="p2">ppp2</prop>-->
+    <!--                <prop key="p3">ppp3</prop>-->
+    <!--            </props>-->
+    <!--        </property>-->
+    <!--    </bean>-->
+
+    <!--    <bean id="user1" class="com.itheima.domain.User">-->
+    <!--        <property name="name" value="tom"/>-->
+    <!--        <property name="addr" value="beijing"/>-->
+    <!--    </bean>-->
+    <!--    <bean id="user2" class="com.itheima.domain.User">-->
+    <!--        <property name="name" value="lucy"/>-->
+    <!--        <property name="addr" value="tianjin"/>-->
+    <!--    </bean>-->
+
+    <!--<bean id="userService" class="com.itheima.service.impl.UserServiceImpl">
+        <property name="userDao" ref="userDao"></property>
+    </bean>-->
+
+    <!--<bean id="userService" class="com.itheima.service.impl.UserServiceImpl" p:userDao-ref="userDao"/>-->
+
+    <!--    <bean id="userService" class="com.itheima.service.impl.UserServiceImpl">-->
+    <!--        <constructor-arg name="userDao" ref="userDao"></constructor-arg>-->
+    <!--    </bean>-->
+
+    <!--    <bean id="userService2" class="com.itheima.service.impl.UserServiceImpl">-->
+    <!--        <constructor-arg name="userDao" ref="userDao"></constructor-arg>-->
+    <!--    </bean>-->
+
+    <!--<import resource="applicationContext-user.xml"/>
+    <import resource="applicationContext-product.xml"/>-->
+
+</beans>
