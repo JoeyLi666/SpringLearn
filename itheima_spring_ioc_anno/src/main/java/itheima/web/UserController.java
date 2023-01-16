@@ -1,7 +1,7 @@
 package itheima.web;
 
-import com.itheima.cofig.SpringCofiguration;
-import com.itheima.service.UserService;
+import itheima.cofig.SpringCofiguration;
+import itheima.service.UserService;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 

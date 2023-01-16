@@ -1,4 +1,4 @@
-package itheima.test;
+package test;
 
 import com.alibaba.druid.pool.DruidDataSource;
 import com.alibaba.druid.pool.DruidPooledConnection;
@@ -52,7 +52,7 @@ public class DataSourceTest {
         dataSource.setDriverClassName("com.mysql.jdbc.Driver");
         dataSource.setUrl("jdbc:mysql://localhost:3306/test");
         dataSource.setUsername("root");
-        dataSource.setPassword("root");
+        dataSource.setPassword("123456");
         DruidPooledConnection connection = dataSource.getConnection();
         System.out.println(connection);
         connection.close();
@@ -65,7 +65,7 @@ public class DataSourceTest {
         dataSource.setDriverClass("com.mysql.jdbc.Driver");
         dataSource.setJdbcUrl("jdbc:mysql://localhost:3306/test");
         dataSource.setUser("root");
-        dataSource.setPassword("root");
+        dataSource.setPassword("123456");
         Connection connection = dataSource.getConnection();
         System.out.println(connection);
         connection.close();

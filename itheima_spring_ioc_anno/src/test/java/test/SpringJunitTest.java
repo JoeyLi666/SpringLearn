@@ -1,7 +1,8 @@
-package itheima.test;
+package test;
 
-import com.itheima.cofig.SpringCofiguration;
-import com.itheima.service.UserService;
+
+import itheima.cofig.SpringCofiguration;
+import itheima.service.UserService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

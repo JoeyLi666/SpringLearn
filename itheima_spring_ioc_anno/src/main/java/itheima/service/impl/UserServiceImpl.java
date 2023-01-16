@@ -1,7 +1,7 @@
 package itheima.service.impl;
 
-import com.itheima.dao.UserDao;
-import com.itheima.service.UserService;
+import itheima.dao.UserDao;
+import itheima.service.UserService;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Service;
