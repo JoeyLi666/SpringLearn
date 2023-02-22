@@ -1,0 +1,20 @@
+# DataSource Config
+#spring:
+#  datasource:
+#    username: root
+#    password: 123456
+#    url: jdbc:mysql://joeyli.asuscomm.com:3306/test_lsc?userUnicode=true&characterEncoding=utf-8
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+
+# springboot整合postgres连接配制
+spring:
+  datasource:
+    url: jdbc:postgresql://joeyli.asuscomm.com:15432/test?currentSchema=test_schema&stringtype=unspecified
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+
+#配置日志
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
