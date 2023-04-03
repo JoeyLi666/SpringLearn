@@ -1,10 +1,10 @@
 package cn.lsc.springboot_mybatis_plus.dao;
 
+import com.baomidou.mybatisplus.annotation.FieldFill;
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 import lombok.ToString;
-
-import java.util.Date;
 
 @Data
 @ToString
@@ -21,11 +21,13 @@ public class ClubPo {
      * NONE: 该类型为未设置主键类型
      */
 
-    private String id;
+    private String clubId;
     private String name;
     private Double money;
     private String nickName;
-    private Date birthday;
-    private Date createTime;
-    private Date updateTime;
+    private String birthday;
+    @TableField(fill = FieldFill.INSERT)
+    private String createTime;
+    @TableField(fill = FieldFill.INSERT_UPDATE)
+    private String updateTime;
 }

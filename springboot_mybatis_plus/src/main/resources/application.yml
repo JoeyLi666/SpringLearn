@@ -9,7 +9,7 @@
 # springboot整合postgres连接配制
 spring:
   datasource:
-    url: jdbc:postgresql://joeyli.asuscomm.com:15432/test?currentSchema=test_schema&stringtype=unspecified
+    url: jdbc:postgresql://joeyli.asuscomm.com:2333/postgres?currentSchema=public&stringtype=unspecified
     username: postgres
     password: postgres
     driver-class-name: org.postgresql.Driver
